@@ -12,16 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :email %>
+    <%= form.label :email, "メールアドレス" %>
     <%= form.text_field :email, id: :user_email %>
   </div>
 
   <div class="field">
-    <%= form.label :password %>
+    <%= form.label :password, "パスワード" %>
     <%= form.password_field :password, id: :user_password %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit yield :submit_label %>
   </div>
 <% end %>
