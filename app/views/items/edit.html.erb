@@ -1,6 +1,6 @@
-<h1>Editing Item</h1>
+<% provide :submit_label, "更新" %>
+<h1>投稿の編集</h1>
 
-<%= render 'form', item: @item %>
+<%= render 'form', item: [@user, @item] %>
 
-<%= link_to 'Show', @item %> |
-<%= link_to 'Back', items_path %>
+<%= link_to '戻る', user_items_path %>
