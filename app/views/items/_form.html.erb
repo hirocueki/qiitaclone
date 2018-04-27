@@ -1,10 +1,10 @@
-<%= form_with(model: item, local: true) do |form| %>
-  <% if item.errors.any? %>
+<%= form_with(model: [@user, @item], local: true) do |form| %>
+  <% if @item.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
 
       <ul>
-      <% item.errors.full_messages.each do |message| %>
+      <% @item.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
+    <%= form.label :title, "タイトル" %>
     <%= form.text_field :title, id: :item_title %>
   </div>
 
   <div class="field">
-    <%= form.label :body %>
+    <%= form.label :body, "本文" %>
     <%= form.text_field :body, id: :item_body %>
   </div>
 
